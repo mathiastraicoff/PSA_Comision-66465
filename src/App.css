@@ -75,3 +75,75 @@
   width: 10px; 
   height: 10px; 
 }
+.navbar {
+  width: 100%;
+}
+
+.app-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* contacto */
+
+.contacto_main {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  margin-top: 60px
+}
+
+.bigicon {
+  font-size: 20px;
+  padding: 10px;
+  color: rgb(198, 41, 41);
+  align-items: center;
+}
+
+.btn-primary {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(198, 41, 41);
+  opacity: 90%;
+  border-color: #000000;
+  border: solid 2px rgb(33, 37, 41);
+  margin: 15px;
+}
+
+.btn-primary:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(33, 37, 41);
+  border: solid 2px rgb(198, 41, 41);
+}
+
+.form-horizontal {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-container {
+  width: 100%;
+  max-width: 400px; /* Ancho máximo de los inputs */
+  margin: 0 auto;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .btn-primary {
+    font-size: 20px;
+  }
+}

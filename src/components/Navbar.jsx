@@ -2,14 +2,18 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
+import useActiveLink from '../hook/useActiveLink';
 
 const Navbar = ({ img }) => {
+    const activeLink = useActiveLink();
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="../index.html">
+                <Link className="navbar-brand" to="/">
                     <img src={img} alt="logoPsa" className="logo-img" />
-                </a>
+                </Link>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -25,19 +29,16 @@ const Navbar = ({ img }) => {
             <div className="collapse navbar-collapse" id="menu">
                 <ul className="navbar-nav me-auto">
                     <li className="nav-item">
-                        <a className="nav-link active" href="/index.html">Home</a>
+                        <Link className={`nav-link ${activeLink === '/home' ? 'active' : ''}`} to="/home">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/pages/quienes_somos.html">Quienes Somos</a>
+                        <Link className={`nav-link ${activeLink === '/quienes-somos' ? 'active' : ''}`} to="/quienes-somos">Quienes Somos</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/pages/servicios.html">Servicios</a>
+                        <Link className={`nav-link ${activeLink === '/productos' ? 'active' : ''}`} to="/productos">Productos</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/pages/productos.html">Productos</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/pages/contacto.html">Contacto</a>
+                        <Link className={`nav-link ${activeLink === '/contacto' ? 'active' : ''}`} to="/contacto">Contacto</Link>
                     </li>
                     <li className="nav-item">
                         <CartWidget />
