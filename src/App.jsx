@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home";
 import Contacto from "./components/Contacto";
