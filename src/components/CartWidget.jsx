@@ -1,11 +1,25 @@
+// import Cart from "../assets/Cart.svg";
+
+// const CartWidget = () => {
+//     return (
+//         <button className="cartButton">
+//             <img src={Cart} alt="cartIcon" className="cartIcon" />
+//         </button>
+//     );
+// };
+
+// export default CartWidget;
+
+
+import React from 'react';
 import Cart from "../assets/Cart.svg";
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
     return (
-        <>
+        <Link to="/Cart" className="cartButton">
             <img src={Cart} alt="cartIcon" className="cartIcon" />
-            <img className="numeroCart" src="https://c0.klipartz.com/pngpicture/767/753/gratis-png-3-ilustraciones-numero-3-blanco-en-circulo-naranja-thumbnail.png" alt="numeroCart" />
-        </>
+        </Link>
     );
 };
 
