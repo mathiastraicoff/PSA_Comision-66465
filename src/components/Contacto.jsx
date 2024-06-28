@@ -57,8 +57,8 @@ const Contacto = () => {
 
 	return (
 		<div className="overflow-hidden">
-			<div className="container contacto_main">
-				<h4>Contactanos</h4>
+			<div className="container-contacto_main">
+				<h2>Contactanos</h2>
 				<form className="form-horizontal" onSubmit={handleSubmit}>
 					<div className="form-group input-container">
 						<span className="text-center">

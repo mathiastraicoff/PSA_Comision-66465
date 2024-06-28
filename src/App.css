@@ -33,6 +33,7 @@
 
 .card {
   padding: 2em;
+
 }
 
 .read-the-docs {
@@ -82,11 +83,23 @@
 .app-container {
   max-width: 100%;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
 }
 /* contacto */
 
+
+.container-contacto_main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.form-control {
+  border: 2px solid black;
+}
 .contacto_main {
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,10 +133,14 @@
 }
 
 .form-horizontal {
+  
+  margin-top: 50PX;
   width: 100%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-group {
@@ -177,24 +194,40 @@ button.cartButton {
   margin: auto;
   padding-top: 50px;
   padding-bottom: 50px;
-  flex: grid;
+  gap: 20px; 
 }
 
 .imgProductos {
   border: solid 2px #99A6F2;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: rgb(247, 247, 247);
   margin-top: 25px;
   margin-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
   border-radius: 10px;
-  display: block;
   transition: transform 0.3s ease;
 }
 
 .imgProductos:hover {
-  transform: scale(1.1); /* Aplica un zoom del 20% al pasar el cursor sobre la imagen */
+  transform: scale(1.1);
 }
 
 .h2Products {
   margin-top: 50px;
 } 
+
+.productos-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  gap: 20px; 
+}
+
+.productos-card {
+  width: 250px; 
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
