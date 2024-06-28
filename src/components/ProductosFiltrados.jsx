@@ -39,7 +39,7 @@ const ProductosFiltrados = () => {
                         <div className="productos-container">
                             {productos.map((producto) => (
                                 <Link
-                                    to={`/producto/${producto.id}`} // Asegúrate de que la ruta coincida con la ruta de ItemDetailContainer
+                                    to={`/producto/${producto.id}`}
                                     key={producto.id}
                                     className="producto-item"
                                 >
