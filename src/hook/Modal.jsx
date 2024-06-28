@@ -1,7 +1,6 @@
-// Modal.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Modal.css'; // Estilos CSS para el modal
+import './Modal.css'; 
 
 const Modal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
