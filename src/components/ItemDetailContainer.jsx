@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { db } from "../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebaseConfig";
+import CartContext from '../context/CartContext';
 
-const ItemListContainer = () => {
+const ItemDetailContainer = () => {
     const { id } = useParams();
+    const { dispatch } = useContext(CartContext);
     const [producto, setProducto] = useState(null);
     const [cargandoProducto, setCargandoProducto] = useState(true);
+    const [cantidad, setCantidad] = useState(1);
 
     useEffect(() => {
         const fetchProducto = async () => {
@@ -27,16 +30,47 @@ const ItemListContainer = () => {
         fetchProducto();
     }, [id]);
 
+    const addToCart = () => {
+        const cartItem = {
+            id: producto.id,
+            name: producto.product,
+            price: producto.price,
+            quantity: cantidad,
+            image: producto.image,
+        };
+
+        dispatch({ type: 'ADD_TO_CART', payload: cartItem });
+        alert("Producto agregado al carrito");
+    };
+
+    const increaseQuantity = () => {
+        setCantidad(cantidad + 1);
+    };
+
+    const decreaseQuantity = () => {
+        if (cantidad > 1) {
+            setCantidad(cantidad - 1);
+        }
+    };
+
     return (
-        <div>
+        <div className="item-detail-container">
             {cargandoProducto ? (
                 <div>Cargando producto...</div>
             ) : producto ? (
-                <div>
-                    <h2 className="h2Products">{producto.name}</h2>
-                    <img src={producto.image} alt={producto.name} />
+                <div className="item-detail-content">
+                    <h2 className="h2Products">{producto.product}</h2>
+                    <img className="imgProductos" src={producto.image} alt={producto.product} />
                     <h3>$ {producto.price}</h3>
                     <p className="PDescription">{producto.description}</p>
+                    
+                    <div className="quantity-container">
+                        <button className="quantity-button" onClick={decreaseQuantity}>-</button>
+                        <div className="quantity">{cantidad}</div>
+                        <button className="quantity-button" onClick={increaseQuantity}>+</button>
+                    </div>
+
+                    <button className="cartButton" onClick={addToCart}>Agregar al carrito</button>
                 </div>
             ) : (
                 <div>No se encontró el producto.</div>
@@ -45,4 +79,4 @@ const ItemListContainer = () => {
     );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

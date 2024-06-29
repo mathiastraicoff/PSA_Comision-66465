@@ -16,7 +16,6 @@ const CartWidget = () => {
     return (
         <Link to="/cart" className="cartButton" onClick={handleClickCart}>
             <img src={Cart} alt="cartIcon" className="cartIcon"/>
-            <span className="cartItemCount">{totalItems}</span>
         </Link>
     );
 };

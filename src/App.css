@@ -2,6 +2,7 @@
   max-width: 100vw;
   margin: 0 auto;
   text-align: center;
+  display: inline
 }
 
 .logo {
@@ -80,6 +81,10 @@
   width: 100%;
 }
 
+.navbar-brand{
+  margin: none;
+}
+
 .app-container {
   max-width: 100%;
   overflow-x: hidden;
@@ -152,6 +157,8 @@
   width: 100%;
   max-width: 400px; 
   margin: 0 auto;
+  flex-direction: row;
+  display: flex;
 }
 
 .error-message {
@@ -168,7 +175,6 @@
 button.cartButton {
   background-color: #0C4070;
   color: white;
-  padding: 10px; 
   border: none;
   display: flex; 
   align-items: center; 
@@ -177,9 +183,6 @@ button.cartButton {
 .cartIcon {
   width: 30px;
   height: 30px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  padding-bottom: 5px; 
 }
 
 .nav-item {
@@ -230,4 +233,76 @@ button.cartButton {
   border-radius: 8px;
   text-align: center;
   background-color: #f0f0f0;
+  display: flex;
+  
+}
+/* Estilos para el componente ItemDetailContainer */
+
+.item-detail-container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px; /* Margen superior ajustado */
+}
+
+.h2Products {
+  margin-top: 20px; /* Espacio arriba del título */
+}
+
+.PDescription {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.quantity-button {
+  background-color: #0C4070;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.quantity {
+  padding: 10px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.cartButton {
+  background-color: #0C4070;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto 30px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cartItemCount{
+  color: red;
+  transform: translateX(-15px);
+  transform: translateY(8px);
+  font-weight: bold;
 }

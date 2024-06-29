@@ -38,7 +38,7 @@ const ItemList = () => {
                             {productos.map((producto) => (
                                 <Link to={`/producto/${producto.id}`} key={producto.id} className="producto-item">
                                     <img className="imgProductos" src={producto.image} alt={producto.product} />
-                                    <h3>{producto.category}</h3>
+                                    <h3>{producto.product}</h3>
                                 </Link>
                             ))}
                         </div>
